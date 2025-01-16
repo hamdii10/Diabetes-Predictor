@@ -2,7 +2,10 @@ import streamlit as st
 import pickle
 import os
 
-model = pickle.load(open('model.pkl', 'rb'))
+
+model_path = os.path.join('models', 'model.pkl')
+
+model = pickle.load(open(model_path, 'rb'))
 
 
 # Title and description
