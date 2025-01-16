@@ -2,8 +2,15 @@ import streamlit as st
 import pickle
 import os
 
+#the two lines below for streamlit online (anyone can access)
 model_path = os.path.join('models', 'model.pkl')
 model = pickle.load(open(model_path, 'rb'))
+
+#Uncomment the following to lines to run the streamlit local
+'''
+model = pickle.load(open('model.pkl', 'rb'))
+'''
+
 
 # Title and description
 st.title("Diabetes Prediction Application")
