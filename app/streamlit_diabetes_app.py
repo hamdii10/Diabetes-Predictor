@@ -2,8 +2,8 @@ import streamlit as st
 import pickle
 
 # Load the model
-current_dir = os.path.dirname(__file__)
-model_path = os.path.join(current_dir, 'models', 'model.pkl')
+
+model_path = os.path.join('models', 'model.pkl')
 
 try:
     model = pickle.load(open(model_path, 'rb'))
