@@ -84,7 +84,7 @@ The machine learning model was trained on the Pima Indians Diabetes dataset (`da
 
 ## Deployment
 
-The application is deployed locally using **Streamlit**. It can also be hosted on cloud platforms like Heroku, AWS, or Streamlit Cloud for global accessibility.
+The application is deployed locally using **Streamlit**. 
 
 ## Contributing
 
