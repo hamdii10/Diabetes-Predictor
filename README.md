@@ -1,4 +1,3 @@
-
 # Diabetes Prediction Project
 
 This repository contains a diabetes prediction application built using machine learning and deployed via **Streamlit**. The project aims to predict the likelihood of diabetes based on input features, such as pregnancies, glucose level, blood pressure, and more.
@@ -9,11 +8,15 @@ This repository contains a diabetes prediction application built using machine l
 - **Machine Learning Model**: A predictive model trained using scikit-learn to classify diabetes likelihood.
 - **Interactive Web Application**: User-friendly Streamlit app for input and prediction.
 
+## Try the App
+
+You can try the live version of this app here: [Diabetes Prediction App](https://diabetes-predictor-h.streamlit.app/)
+
 ## Installation
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/hamdii10/diabetes-predictor.git
+   git clone https://github.com/yourusername/diabetes-predictor.git
    cd diabetes-predictor
    ```
 
@@ -28,7 +31,6 @@ This repository contains a diabetes prediction application built using machine l
    ```bash
    pip install -r requirements.txt
    ```
-
 ## Project Structure
 
 ```
@@ -41,8 +43,7 @@ diabetes-predictor/
 │   └── model.pkl             # Saved machine learning model
 ├── notebooks/                # Jupyter notebooks for analysis and training
 │   └── Diabetes.ipynb        # Notebook for data processing and model training
-├── docs/                     # Documentation files
-│   └── README.md             # Project overview and instructions
+├── README.md                 # Project overview and instructions
 ├── LICENSE                   # License file
 └── requirements.txt          # Python dependencies for the project
 ```
