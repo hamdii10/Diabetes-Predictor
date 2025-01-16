@@ -13,7 +13,7 @@ This repository contains a diabetes prediction application built using machine l
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/diabetes-predictor.git
+   git clone https://github.com/hamdii10/diabetes-predictor.git
    cd diabetes-predictor
    ```
 
