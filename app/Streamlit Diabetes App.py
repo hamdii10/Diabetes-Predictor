@@ -2,7 +2,15 @@ import streamlit as st
 import pickle
 
 # Load the model
-model = pickle.load(open('model.pkl', 'rb'))
+current_dir = os.path.dirname(__file__)
+model_path = os.path.join(current_dir, 'models', 'model.pkl')
+
+try:
+    model = pickle.load(open(model_path, 'rb'))
+except FileNotFoundError:
+    st.error("The model file 'model.pkl' is missing. Please ensure it is uploaded in the 'models' directory.")
+    st.stop()
+
 
 # Title and description
 st.title("Diabetes Prediction Application")
