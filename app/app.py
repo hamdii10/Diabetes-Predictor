@@ -7,9 +7,9 @@ model_path = os.path.join('models', 'model.pkl')
 model = pickle.load(open(model_path, 'rb'))
 
 #Uncomment the following to lines to run the streamlit local
-'''
-model = pickle.load(open('model.pkl', 'rb'))
-'''
+
+#model = pickle.load(open('model.pkl', 'rb'))
+
 
 
 # Title and description
