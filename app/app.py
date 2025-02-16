@@ -7,13 +7,9 @@ from PIL import Image
 
 # Load trained model
 model_path = os.path.join('models', 'model.pkl')
+model = pickle.load(open(model_path, 'rb'))
 scaler_path = os.path.join('models', 'scaler.pkl')
-
-with open(model_path, 'rb') as file:
-    model = pickle.load(file)
-
-with open(scaler_path, 'rb') as file:
-    scaler = pickle.load(file)
+scaler = pickle.load(open(scaler_path, 'rb'))
 
 # Title and description
 st.title("Diabetes Prediction Application")
