@@ -59,8 +59,7 @@ if state:
 # Sidebar information
 st.sidebar.title("About")
 st.sidebar.info("""
-This diabetes prediction model uses the Pima Indians Diabetes dataset.
-The dataset is publicly available on [Kaggle](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data).
+This diabetes prediction model uses the Pima [Indians Diabetes dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data).
 """)
 
 st.sidebar.header("How It Works")
