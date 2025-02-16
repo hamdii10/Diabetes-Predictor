@@ -12,8 +12,8 @@ image = Image.open(image_path)
 
 
 # Title and description
-st.title("Diabetes Prediction Application")
 st.image(image, use_container_width =True)
+st.title("Diabetes Prediction Application")
 st.write("""
 This application predicts whether a person is likely to have diabetes based on medical information. 
 Please fill in the details below and click 'Predict'.
