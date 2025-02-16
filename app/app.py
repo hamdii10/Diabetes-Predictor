@@ -9,10 +9,7 @@ model = pickle.load(open(model_path, 'rb'))
 
 # Title and description
 st.title("Diabetes Prediction Application")
-st.write("""
-This application predicts whether a person is likely to have diabetes based on medical information. 
-Please fill in the details below and click 'Predict'.
-""")
+
 
 # Banner image after main title
 st.subheader("Symptoms")
