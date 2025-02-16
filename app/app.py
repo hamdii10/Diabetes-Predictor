@@ -59,7 +59,7 @@ if state:
 # Symptoms Button with modal popup
 if st.button("Symptoms"):
     with st.expander("Diabetes Symptoms"):
-        symptoms_image_path = os.path.join('app', 'diabetes_symptoms.jpg')
+        symptoms_image_path = os.path.join('app', 'diabetes_banner.jpg')
         symptoms_image = Image.open(symptoms_image_path)
         st.image(symptoms_image, use_container_width =True)
 
