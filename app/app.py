@@ -63,8 +63,7 @@ if state:
 # Sidebar information
 st.sidebar.title("About")
 st.sidebar.info("""
-This diabetes prediction model uses the Pima Indians Diabetes dataset.
-The dataset is publicly available on [Kaggle](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data).
+This diabetes prediction model uses the Pima [Indians Diabetes dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data).
 """)
 
 st.sidebar.header("How It Works")
@@ -88,7 +87,7 @@ st.sidebar.write("""
 
 st.sidebar.header("Developer Notes")
 st.sidebar.write("""
-- This application is built with Python and Streamlit.
+- This application is built with Python.
 - The machine learning model used was ExtraTreesClassifier.
 """)
 
