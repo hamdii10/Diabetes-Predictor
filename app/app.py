@@ -6,8 +6,6 @@ from sklearn.preprocessing import StandardScaler
 from PIL import Image
 
 
-st.write("scikit-learn version:", sklearn.__version__)
-
 
 # Load trained model
 model_path = os.path.join('models', 'model.pkl')
