@@ -11,7 +11,7 @@ model = pickle.load(open(model_path, 'rb'))
 
 # Title and description
 st.title("Diabetes Prediction Application")
-st.image(os.path.join('Diabetes-Predictor', 'app', 'diabetes_banner.png'), use_column_width=True)
+st.image(os.path.join('Diabetes-Predictor', 'app', 'diabetes_banner.png'), use_container_width=True)
 st.write("""
 This application predicts whether a person is likely to have diabetes based on medical information. 
 Please fill in the details below and click 'Predict'.
