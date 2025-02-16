@@ -24,13 +24,13 @@ st.image(image_path, use_container_width=True)
 # Define reset function
 def reset_inputs():
     st.session_state.Pregnancies = 0
-    st.session_state.Glucose = 70
-    st.session_state.BloodPressure = 80
-    st.session_state.SkinThickness = 20
-    st.session_state.Insulin = 30
-    st.session_state.BMI = 18.5
-    st.session_state.DiabetesPedigreeFunction = 0.1
-    st.session_state.Age = 18
+    st.session_state.Glucose = 50
+    st.session_state.BloodPressure = 50
+    st.session_state.SkinThickness = 5
+    st.session_state.Insulin = 0
+    st.session_state.BMI = 10
+    st.session_state.DiabetesPedigreeFunction = 0.0
+    st.session_state.Age = 10
 
 # Initialize session state for input fields
 if "Pregnancies" not in st.session_state:
@@ -40,9 +40,9 @@ if "Pregnancies" not in st.session_state:
 Pregnancies = st.number_input('Number of times pregnant', min_value=0, max_value=20, step=1, key='Pregnancies')
 Glucose = st.number_input('Plasma glucose concentration', min_value=50, max_value=200, step=1, key='Glucose')
 BloodPressure = st.number_input('Diastolic blood pressure (mm Hg)', min_value=50, max_value=130, step=1, key='BloodPressure')
-SkinThickness = st.number_input('Triceps skin fold thickness (mm)', min_value=5, max_value=80, step=1, key='SkinThickness')
+SkinThickness = st.number_input('Triceps skin fold thickness (mm)', min_value=5, max_value=90, step=1, key='SkinThickness')
 Insulin = st.number_input('2-Hour serum insulin (mu U/ml)', min_value=0, max_value=400, step=1, key='Insulin')
-BMI = st.number_input('Body mass index (weight in kg/(height in m)^2)', min_value=10.0, max_value=50.0, step=0.1, key='BMI')
+BMI = st.number_input('Body mass index (weight in kg/(height in m)^2)', min_value=10.0, max_value=70, step=0.1, key='BMI')
 DiabetesPedigreeFunction = st.number_input('Diabetes pedigree function', min_value=0.0, max_value=2.5, step=0.01, key='DiabetesPedigreeFunction')
 Age = st.number_input('Age (years)', min_value=10, max_value=100, step=1, key='Age')
 
