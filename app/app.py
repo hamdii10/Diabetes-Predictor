@@ -70,9 +70,21 @@ st.sidebar.write("""
 3. Use the 'Clear' button to reset inputs.
 """)
 
+st.sidebar.header("Valid Input Ranges")
+st.sidebar.write("""
+- **Pregnancies**: 0 - 20
+- **Glucose**: 50 - 200
+- **Blood Pressure**: 50 - 130 mm Hg
+- **Skin Thickness**: 5 - 80 mm
+- **Insulin**: 0 - 400 mu U/ml
+- **BMI**: 10.0 - 50.0
+- **Diabetes Pedigree Function**: 0.0 - 2.5
+- **Age**: 10 - 100 years
+""")
+
 st.sidebar.header("Developer Notes")
 st.sidebar.write("""
-- This application is built with Python and Streamlit.
+- This application is built with Python.
 - The machine learning model used was ExtraTreesClassifier.
 """)
 
