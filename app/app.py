@@ -1,17 +1,19 @@
 import streamlit as st
 import pickle
 import os
+from PIL import Image
 
 #the two lines below for streamlit online (anyone can access)
 model_path = os.path.join('models', 'model.pkl')
 model = pickle.load(open(model_path, 'rb'))
 
-
+image_path = os.path.join('Diabetes-Predictor', 'app', 'diabetes_banner.png')
+image = Image.open(image_path)
 
 
 # Title and description
 st.title("Diabetes Prediction Application")
-st.image(os.path.join('Diabetes-Predictor', 'app', 'diabetes_banner.png'), use_container_width=True)
+st.image(image, use_container_width =True)
 st.write("""
 This application predicts whether a person is likely to have diabetes based on medical information. 
 Please fill in the details below and click 'Predict'.
