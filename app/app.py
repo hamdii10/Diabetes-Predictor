@@ -3,27 +3,32 @@ import pickle
 import os
 from PIL import Image
 
-#the two lines below for streamlit online (anyone can access)
+# Load model
 model_path = os.path.join('models', 'model.pkl')
 model = pickle.load(open(model_path, 'rb'))
 
-
+# Title and description
 st.title("Diabetes Prediction Application")
 st.write("""
 This application predicts whether a person is likely to have diabetes based on medical information. 
 Please fill in the details below and click 'Predict'.
 """)
 
+# Banner image after main title
+st.subheader("Symptoms")
+image_path = os.path.join('app', 'diabetes_banner.jpg')
+st.image(image_path, use_container_width=True)
+
 # Define a reset function
 def reset_inputs():
     st.session_state.Pregnancies = 0
-    st.session_state.Glucose = 0
-    st.session_state.BloodPressure = 0
-    st.session_state.SkinThickness = 0
-    st.session_state.Insulin = 0
-    st.session_state.BMI = 0.0
-    st.session_state.DiabetesPedigreeFunction = 0.0
-    st.session_state.Age = 0
+    st.session_state.Glucose = 70
+    st.session_state.BloodPressure = 80
+    st.session_state.SkinThickness = 20
+    st.session_state.Insulin = 30
+    st.session_state.BMI = 18.5
+    st.session_state.DiabetesPedigreeFunction = 0.1
+    st.session_state.Age = 18
 
 # Initialize session state for input fields
 if "Pregnancies" not in st.session_state:
@@ -47,26 +52,23 @@ with col2:
     clear = st.button('Clear', on_click=reset_inputs)
 
 # Prediction logic
-if state: 
+if state:
     pred = model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
     if pred[0] == 1:
         st.error('The prediction indicates that you may have diabetes. Please consult a healthcare professional for further advice.')
     else:
         st.success('The prediction indicates that you do not have diabetes.')
 
-
-
-# Symptoms Button with modal popup
-if st.button("Symptoms"):
-    with st.expander("Diabetes Symptoms"):
-        symptoms_image_path = os.path.join('app', 'diabetes_banner.jpg')
-        symptoms_image = Image.open(symptoms_image_path)
-        st.image(symptoms_image, use_container_width =True)
+# Symptoms section with banner image
+st.subheader("Symptoms")
+symptoms_image_path = os.path.join('app', 'diabetes_symptoms.jpg')
+st.image(symptoms_image_path, use_container_width=True)
 
 # Sidebar information
 st.sidebar.title("About")
 st.sidebar.info("""
-This diabetes prediction model uses the Pima [Indians Diabetes dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data).
+This diabetes prediction model uses the Pima Indians Diabetes dataset.
+The dataset is publicly available on [Kaggle](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data).
 """)
 
 st.sidebar.header("How It Works")
@@ -90,7 +92,7 @@ st.sidebar.write("""
 
 st.sidebar.header("Developer Notes")
 st.sidebar.write("""
-- This application is built with Python.
+- This application is built with Python and Streamlit.
 - The machine learning model used was ExtraTreesClassifier.
 """)
 
