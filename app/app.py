@@ -59,10 +59,6 @@ if state:
     else:
         st.success('The prediction indicates that you do not have diabetes.')
 
-# Symptoms section with banner image
-st.subheader("Symptoms")
-symptoms_image_path = os.path.join('app', 'diabetes_symptoms.jpg')
-st.image(symptoms_image_path, use_container_width=True)
 
 # Sidebar information
 st.sidebar.title("About")
