@@ -9,24 +9,7 @@ model = pickle.load(open(model_path, 'rb'))
 
 # Set background image
 image_path = os.path.join('app', 'diabetes_banner.jpg')
-def set_bg(image_path):
-    with open(image_path, "rb") as f:
-        img_bytes = f.read()
-    b64_image = "data:image/png;base64," + img_bytes.hex()
-    st.markdown(
-        f"""
-        <style>
-            .stApp {{
-                background: url({b64_image}) no-repeat center center fixed;
-                background-size: cover;
-            }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-set_bg(image_path)
-# Title and description
+st.sidebar.image(image_path, use_column_width=True)
 
 st.title("Diabetes Prediction Application")
 st.write("""
