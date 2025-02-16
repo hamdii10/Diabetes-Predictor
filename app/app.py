@@ -7,9 +7,6 @@ from PIL import Image
 model_path = os.path.join('models', 'model.pkl')
 model = pickle.load(open(model_path, 'rb'))
 
-# Set background image
-image_path = os.path.join('app', 'diabetes_banner.jpg')
-st.sidebar.image(image_path, use_column_width=True)
 
 st.title("Diabetes Prediction Application")
 st.write("""
@@ -56,6 +53,14 @@ if state:
         st.error('The prediction indicates that you may have diabetes. Please consult a healthcare professional for further advice.')
     else:
         st.success('The prediction indicates that you do not have diabetes.')
+
+
+
+# Symptoms Button with modal popup
+if st.button("Symptoms"):
+    with st.modal("Diabetes Symptoms"):
+        symptoms_image_path = os.path.join('app', 'diabetes_symptoms.jpg')
+        st.image(symptoms_image_path, use_container_width =True)
 
 # Sidebar information
 st.sidebar.title("About")
