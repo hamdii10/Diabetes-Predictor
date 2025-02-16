@@ -1,22 +1,29 @@
 import streamlit as st
 import pickle
 import os
+import numpy as np
+from sklearn.preprocessing import StandardScaler
 from PIL import Image
 
-# Load model
+# Load trained model
 model_path = os.path.join('models', 'model.pkl')
-model = pickle.load(open(model_path, 'rb'))
+scaler_path = os.path.join('models', 'scaler.pkl')
+
+with open(model_path, 'rb') as file:
+    model = pickle.load(file)
+
+with open(scaler_path, 'rb') as file:
+    scaler = pickle.load(file)
 
 # Title and description
 st.title("Diabetes Prediction Application")
 
-
-# Banner image after main title
+# Banner image
 st.subheader("Symptoms")
 image_path = os.path.join('app', 'diabetes_banner.jpg')
 st.image(image_path, use_container_width=True)
 
-# Define a reset function
+# Define reset function
 def reset_inputs():
     st.session_state.Pregnancies = 0
     st.session_state.Glucose = 70
@@ -31,7 +38,7 @@ def reset_inputs():
 if "Pregnancies" not in st.session_state:
     reset_inputs()
 
-# Input fields with specific valid ranges
+# Input fields with valid ranges
 Pregnancies = st.number_input('Number of times pregnant', min_value=0, max_value=20, step=1, key='Pregnancies')
 Glucose = st.number_input('Plasma glucose concentration', min_value=50, max_value=200, step=1, key='Glucose')
 BloodPressure = st.number_input('Diastolic blood pressure (mm Hg)', min_value=50, max_value=130, step=1, key='BloodPressure')
@@ -50,12 +57,20 @@ with col2:
 
 # Prediction logic
 if state:
-    pred = model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
-    if pred[0] == 1:
+    # Prepare input data
+    input_data = np.array([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
+
+    # Apply the same preprocessing (scaling)
+    input_scaled = scaler.transform(input_data)
+
+    # Make prediction
+    prediction = model.predict(input_scaled)
+
+    # Display result
+    if prediction[0] == 1:
         st.error('The prediction indicates that you may have diabetes. Please consult a healthcare professional for further advice.')
     else:
         st.success('The prediction indicates that you do not have diabetes.')
-
 
 # Sidebar information
 st.sidebar.title("About")
