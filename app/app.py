@@ -7,7 +7,7 @@ from PIL import Image
 model_path = os.path.join('models', 'model.pkl')
 model = pickle.load(open(model_path, 'rb'))
 
-image_path = os.path.join('Diabetes-Predictor', 'app', 'diabetes_banner.jpg')
+image_path = os.path.join('app', 'diabetes_banner.jpg')
 image = Image.open(image_path)
 
 
