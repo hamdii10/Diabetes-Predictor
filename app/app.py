@@ -28,7 +28,7 @@ def reset_inputs():
     st.session_state.BloodPressure = 50
     st.session_state.SkinThickness = 5
     st.session_state.Insulin = 0
-    st.session_state.BMI = 10
+    st.session_state.BMI = 10.0
     st.session_state.DiabetesPedigreeFunction = 0.0
     st.session_state.Age = 10
 
