@@ -16,7 +16,7 @@ You can try the live version of this app here: [Diabetes Prediction App](https:/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/hamdii10/diabetes-predictor.git
+   git clone https://github.com/hamdii10/XT-SMOTE-Diabetes.git
    cd diabetes-predictor
    ```
 
