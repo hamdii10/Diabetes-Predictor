@@ -5,7 +5,7 @@ This repository contains a diabetes prediction application built using machine l
 ## Features
 
 - **Data Processing**: Handles and preprocesses the diabetes dataset (`diabetes.csv`).
-- **Machine Learning Model**: A predictive model trained using scikit-learn to classify diabetes likelihood.
+- **Machine Learning Model**: A predictive model trained using **ExtraTreesClassifier** with **SMOTE** for handling imbalanced data, achieving an accuracy of **74%**.
 - **Interactive Web Application**: User-friendly Streamlit app for input and prediction.
 
 ## Try the App
@@ -31,6 +31,7 @@ You can try the live version of this app here: [Diabetes Prediction App](https:/
    ```bash
    pip install -r requirements.txt
    ```
+
 ## Project Structure
 
 ```
@@ -40,7 +41,8 @@ diabetes-predictor/
 ├── data/                     # Dataset and related files
 │   └── diabetes.csv          # Dataset used for training the model
 ├── models/                   # Machine learning models
-│   └── model.pkl             # Saved machine learning model
+│   ├── model.pkl             # Saved machine learning model
+│   ├── scaler.pkl            # Saved scaler for data preprocessing
 ├── notebooks/                # Jupyter notebooks for analysis and training
 │   └── Diabetes.ipynb        # Notebook for data processing and model training
 ├── README.md                 # Project overview and instructions
@@ -56,17 +58,18 @@ diabetes-predictor/
    ```
 
 2. **Enter input values**:
-   - Number of times pregnant
-   - Plasma glucose concentration
-   - Diastolic blood pressure (mm Hg)
-   - Triceps skin fold thickness (mm)
-   - 2-Hour serum insulin (mu U/ml)
-   - Body mass index (BMI)
-   - Diabetes pedigree function
-   - Age
+   - Number of times pregnant (0 - 20)
+   - Plasma glucose concentration (50 - 200 mg/dL)
+   - Diastolic blood pressure (50 - 130 mm Hg)
+   - Triceps skin fold thickness (5 - 90 mm)
+   - 2-Hour serum insulin (0 - 400 mu U/ml)
+   - Body mass index (BMI) (10.0 - 70.0)
+   - Diabetes pedigree function (0.0 - 2.5)
+   - Age (10 - 100 years)
 
 3. **Predict**:
    - Click the "Predict" button to view the results.
+   - Click "Clear" to reset the inputs.
 
 ## Dataset
 
@@ -77,14 +80,15 @@ The project uses the **Pima Indians Diabetes Dataset**, which is publicly availa
 ## Model Details
 
 The machine learning model was trained on the Pima Indians Diabetes dataset (`data/diabetes.csv`) and includes the following steps:
-- Data preprocessing
-- Feature engineering
-- Training using a classification algorithm
-- Saving the model (`models/model.pkl`) for deployment
+- Data preprocessing, including feature scaling using **StandardScaler**
+- Handling class imbalance using **SMOTE**
+- Training using **ExtraTreesClassifier**
+- Achieved **74% accuracy**
+- Saving the model (`models/model.pkl`) and scaler (`models/scaler.pkl`) for deployment
 
 ## Deployment
 
-The application is deployed locally using **Streamlit**. 
+The application is deployed locally using **Streamlit**.
 
 ## Contributing
 
