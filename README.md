@@ -14,7 +14,7 @@ This repository contains a diabetes prediction application built using machine l
 
 ## Try the App  
 
-You can try the live version of this app here: [Diabetes Prediction App](https://diabetes-predictor-h.streamlit.app/)  
+You can try the live version of this app here: [Diabetes Prediction App](https://diabetes-predictor-hamdii.streamlit.app/)  
 
 ## Installation  
 
